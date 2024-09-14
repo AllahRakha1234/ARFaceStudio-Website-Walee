@@ -1,7 +1,15 @@
 import React from "react";
 import Image from 'next/image';  
 
-const Asset = ({ imageSrc }) => {  
+// Define a TypeScript interface for the component props
+interface AssetProps {
+    imageSrc: string; 
+  }
+
+
+const Asset = ({ imageSrc }: AssetProps) => {  
+
+  // RETURN JSX
   return (
     <div className="bg-slate-300 p-3 rounded-lg">
       <div className="w-[150px] h-[150px] relative">  
