@@ -4,7 +4,7 @@ import Navbar from './../Components/Navbar';
 import React, { useEffect, useRef, useState } from 'react';
 import FilterBoard from '@/Components/FilterBoard';
 import VideoPlayer from '@/Components/VideoPlayer';
-import AssetsPage from "../pages/AssetsPage"
+import AssetsPage from "../Components/AssetsPage"
 
 
 export default function Home() {

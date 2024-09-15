@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import Asset from './../Components/Asset';
+import Asset from './Asset';
 
 const AssetsPage = () => {
 
