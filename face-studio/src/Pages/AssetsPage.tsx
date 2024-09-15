@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 import React from "react";
 import Asset from './../Components/Asset';
 
@@ -34,3 +34,16 @@ const AssetsPage = () => {
 };
 
 export default AssetsPage;
+
+// 'use client'
+// import React from 'react'
+
+// const AssetsPage = () => {
+//   return (
+//     <div>
+//       <h1 className="bg-black" >Hello</h1>
+//     </div>
+//   )
+// }
+
+// export default AssetsPage

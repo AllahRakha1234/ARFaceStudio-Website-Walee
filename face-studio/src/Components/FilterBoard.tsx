@@ -103,13 +103,35 @@ const FilterBoard = () => {
                 </div>
 
                 {/* Other tabs */}
-                <input type="radio" name="my_tabs_2" role="tab" className="tab bg-white text-black" aria-label="Magic" />
-                <div role="tabpanel" className="tab-content text-black rounded-box p-3">
-                    <input
-                        type="file"
-                        className="file-input-xs m-2 bg-white text-black w-full max-w-xs"
-                        onChange={handleFileChange}
-                    />
+                <input type="radio" name="my_tabs_2" role="tab" className="tab  border-black bg-white text-black" aria-label="Magic" />
+                <div role="tabpanel" className="tab-content flex-auto text-black rounded-box p-3">
+                <div className="max-w-md">
+                        <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                            <div className="grid place-items-center h-full w-12 text-gray-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <input
+                                className="peer h-full w-full bg-white outline-none text-sm text-gray-700 pr-2"
+                                type="text"
+                                id="search"
+                                placeholder="Search something.."
+                            />
+                        </div>
+                    </div>
+                   
                     <div className="grid grid-cols-3 md:grid-cols-3 gap-1">
                         {currentItems.map((filter, index) => (
                             <div className="m-1 transform scale-90" key={index}>
@@ -132,6 +154,33 @@ const FilterBoard = () => {
 
                 <input type="radio" name="my_tabs_2" role="tab" className="tab bg-white text-black" aria-label="Overlays" />
                 <div role="tabpanel" className="tab-content text-black rounded-box p-3">
+                <div className="max-w-md">
+                        <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                            <div className="grid place-items-center h-full w-12 text-gray-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <input
+                                className="peer h-full w-full bg-white outline-none text-sm text-gray-700 pr-2"
+                                type="text"
+                                id="search"
+                                placeholder="Search something.."
+                            />
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-3 md:grid-cols-3 gap-1">
                         {currentItems.map((filter, index) => (
                             <div className="m-1 transform scale-90" key={index}>
@@ -154,6 +203,33 @@ const FilterBoard = () => {
 
                 <input type="radio" name="my_tabs_2" role="tab" className="tab bg-white text-black" aria-label="Face" />
                 <div role="tabpanel" className="tab-content text-black rounded-box p-3">
+                <div className="max-w-md">
+                        <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                            <div className="grid place-items-center h-full w-12 text-gray-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <input
+                                className="peer h-full w-full bg-white outline-none text-sm text-gray-700 pr-2"
+                                type="text"
+                                id="search"
+                                placeholder="Search something.."
+                            />
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-3 md:grid-cols-3 gap-1">
                         {currentItems.map((filter, index) => (
                             <div className="m-1 transform scale-90" key={index}>
@@ -192,18 +268,17 @@ const FilterBoard = () => {
 </div>
                        }
                         <p>Choose the Color of Light </p><input type="color" name="" id="" />
-                        <div className = "flex flex-row gap-2 justify center " ><p>Intensity</p><input type="range" min={0} max="100" value="40" className="range range-xs" /></div>
 
-                        <div className = "flex flex-row gap-2 justify center " ><p>Point Light Intensity</p><input type="range" min={0} max="100" value="40" className="range range-xs" /></div>
-
-
-                        <div className = "flex flex-row gap-2 justify center " ><p>Directional Light Intensity</p><input type="range" min={0} max="100" value="40" className="range range-xs" /></div>
+                        <div className = "flex flex-row gap-2 justify-between" ><p>Point Light </p><input type="range" min={0} max="100" value="40" className="range my-2 range-xs w-52" /></div>
 
 
-                        <div className = "flex flex-row gap-2 justify center " ><p>Spotlight Light Intensity</p><input type="range" min={0} max="100" value="40" className="range range-xs" /></div>
+                        <div className = "flex flex-row gap-2 justify-between" ><p>Directional Light</p><input type="range" min={0} max="100" value="40" className="range my-2 w-52 range-xs" /></div>
 
 
-                        <div className = "flex flex-row gap-2 justify center " ><p>Change Texture</p><input type="file" className="" /></div>
+                        <div className = "flex flex-row gap-2 justify-between " ><p>Spotlight Light</p><input type="range" min={0} max="100" value="40" className="range my-2 range-xs w-52" /></div>
+
+
+                        <div className = "flex flex-row gap-2 justify-between " ><p>Change Texture</p><input  type="file" className="" /></div>
 
                         
                         <div className="modal-action">
