@@ -1,14 +1,72 @@
-
+'use client';
 import './globals.css';
 import Navbar from './../Components/Navbar';
-
+import React, { useEffect, useRef } from 'react';
+import FilterBoard from '@/Components/FilterBoard';
+import FilterCard from '@/Components/FilterCard';
+import AssetUpload from '@/Components/AssetUpload';
 export default function Home() {
+  const videoRef = useRef(null);
+
+  // Access the webcam on component mount
+  useEffect(() => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (stream) {
+          let video = videoRef.current;
+          if (video) {
+            video.srcObject = stream;
+            video.play();
+          }
+        })
+        .catch(function (err) {
+          console.log('Error accessing the camera: ', err);
+        });
+    }
+  }, []);
+
   return (
     <>
-    <Navbar />
-    <div className="flex justify-center items-center mt-[40vh]">
-      <h2 className="text-3xl font-bold underline bg-red-400 p-3 rounded-md">Welcome to AR Face Studio</h2>
-    </div>
+    
+      <Navbar />
+      <div className="bg-gradient-to-r pl-2 from-[#d2bcbc] to-[#9270ed] h-screen flex justify-between flex-row">
+        <div className="w-[50%]">
+          <FilterBoard/>
+        </div>
+        <div className="w-[50%] h-[90%] relative top-10 m-2 flex flex-col items-center justify-center">
+          <video  
+            ref={videoRef}
+            className="w-full h-full object-cover rounded-lg"
+            autoPlay
+            playsInline
+          />
+          <div className="w-[80%] rounded-l-full shadow-sm shadow-black rounded-r-full relative bottom-32 z-20 h-[20%] bg-blue-200 bg-opacity-10 backdrop-blur-sm flex items-center justify-center">
+            <div className="carousel h-[100%] carousel-center rounded-box max-w-md space-x-2 p-4">
+              <div className="carousel-item w-[40%]">
+                <img
+                  src="https://img.freepik.com/free-photo/eyeglasses-wear_1203-2605.jpg?t=st=1726340619~exp=1726344219~hmac=bd4211363949f81cc925d1018c44231466940f700a722ac2a5e9450b7ad299b5&w=826"
+                  className="rounded-full shadow-md shadow-black"
+                />
+              </div>
+             
+              <div className="carousel-item w-[40%] ">
+                <img
+                  src="https://img.freepik.com/free-photo/isolated-white-cap_125540-1024.jpg?t=st=1726340937~exp=1726344537~hmac=521544bfae12fbc791d0a2618fe27da19005388c9bea59b31ee67221cd956619&w=826"
+                  className="rounded-full shadow-md shadow-black"
+                />
+              </div>
+
+              <div className="carousel-item w-[40%]">
+                <img
+                  src="https://img.freepik.com/premium-photo/flat-design-as-glasses-icon-with-copy-space-blue-background-concept-as-vector-image-glasse_980716-410961.jpg?w=996"
+                  className="rounded-full shadow-md shadow-black"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }
