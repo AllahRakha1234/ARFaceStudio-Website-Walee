@@ -36,7 +36,7 @@ const FilterCard = ({ filter }) => {
     >
       <figure>
         <img
-          src={filter.image}
+          src="/Assets/myassets/cat.jpg"
           alt={filter.title}
           className="w-full h-48 object-cover transition-transform duration-300"
           style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
